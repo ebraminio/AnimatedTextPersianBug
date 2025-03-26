@@ -11,9 +11,12 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.text.font.FontVariation
+import androidx.compose.ui.unit.LayoutDirection
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.wear.compose.material.Text
 import androidx.wear.compose.material3.AnimatedText
@@ -46,6 +49,14 @@ class MainActivity : ComponentActivity() {
                         progressFraction = { 0.5f },
                     )
                     Text("Expected: $rtlText")
+                    CompositionLocalProvider(LocalLayoutDirection provides LayoutDirection.Rtl) {
+                        AnimatedText(
+                            text = "Actual: Example",
+                            fontRegistry = animatedTextFontRegistry,
+                            progressFraction = { 0.5f },
+                        )
+                        Text("Expected: Example")
+                    }
                 }
             }
         }
