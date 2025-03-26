@@ -15,9 +15,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontVariation
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
-import androidx.wear.compose.material.MaterialTheme
 import androidx.wear.compose.material.Text
 import androidx.wear.compose.material3.AnimatedText
+import androidx.wear.compose.material3.MaterialTheme
 import androidx.wear.compose.material3.rememberAnimatedTextFontRegistry
 
 class MainActivity : ComponentActivity() {
